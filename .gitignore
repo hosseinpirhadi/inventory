@@ -1,0 +1,6 @@
+*pycache*
+*pytest_cache*
+*.env
+*migrations
+*alembic.ini
+*ipynb
