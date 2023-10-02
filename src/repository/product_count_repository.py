@@ -17,15 +17,6 @@ class ProductCountRepository:
     def get_warehouse_report(self, db: Session, warehouse_id: int, skip: int, limit: int):
         product = aliased(Product)
 
-        # query = (
-        #             db.query(ProductCount, product)
-        #             .filter(ProductCount.ware_house_id == warehouse_id)
-        #             .join(product, ProductCount.id == product.id)
-        #             .order_by(product.id)
-        #             .offset(skip)
-        #             .limit(limit)
-        #         )
-
         query = (
             db.query(ProductCount, product)
             .join(product, ProductCount.id == product.id)
@@ -114,5 +105,3 @@ class ProductCountRepository:
             'ware_house_id': warehouse_id,
             'amount': new_amount
         }
-
-    

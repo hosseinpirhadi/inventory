@@ -5,7 +5,6 @@ from fastapi import HTTPException
 
 class PersonRepository:
     def __init__(self):
-        # self.session = session
         pass
 
     def get_persons(self, db: Session, skip: int, limit: int):
